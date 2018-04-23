@@ -2,7 +2,9 @@ Question 1
 
 mass = 600: acceleration = 2
 
-OUTPUT mass * acceleration
+force = mass * acceleration
+
+OUTPUT force
 
 ---<>---
 
