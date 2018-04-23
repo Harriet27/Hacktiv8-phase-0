@@ -1,0 +1,45 @@
+Question 1
+
+mass = 600: acceleration = 2
+
+OUTPUT mass * acceleration
+
+---<>---
+
+Question 2
+
+INPUT year
+remainder1 = year % 4
+
+IF remainder1 == 0 THEN remainder2 = year % 100
+  ELSE OUTPUT "false kabisat"
+
+IF remainder2 == 0 THEN remainder3 year % 400
+  ELSE OUTPUT "true kabisat"
+
+IF remainder3 == 0 THEN OUTPUT "true kabisat"
+  ELSE OUTPUT "false kabisat"
+
+---<>---
+
+Question 3
+
+total = 0
+
+WHILE total <= 20
+  INPUT clothes
+  total =  total + clothes
+ENDWHILE
+OUTPUT "20 clothes are inside! You've reached max capacity! Booyeah!"
+
+---<>---
+
+Question 4
+
+panjang  -> > 5: pendek -> <= 5
+
+FOR student = 1 to 40
+  INPUT panjangKuku
+  IF panjangKuku  <= 5 THEN OUTPUT "Ihhh anak baik!"
+    ELSE IF panjangKuku > 5 THEN OUTPUT "janc*k dasar bocah nakal! push-up 1000 kali!"
+NEXT student
