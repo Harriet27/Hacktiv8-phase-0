@@ -47,4 +47,4 @@ switch (bulan) {
 
 if (bulanConverted) {
 console.log(tanggal + " " + bulanConverted + " " + tahun);
-} else {console.log("Invalid!");
+} else {console.log("Invalid!")};
