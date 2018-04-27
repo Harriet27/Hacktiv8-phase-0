@@ -1,10 +1,9 @@
 // Init function word reverser
 function balikKata(kata) {
-  var lengthKata = kata.length; // var to contain word length
+  var lengthKata = kata.length - 1; // var to contain word length, add -1 to sync with charAt method which starts with 0
   var kataTerbalik = ""; // var to contain chars enteted by the function, reversed
   while (lengthKata >= 0) {
-    var hurufKe = kata.charAt(lengthKata); // charAt method to obtain char position
-    kataTerbalik = kataTerbalik + hurufKe; // char entered reverse are added to variable,
+    kataTerbalik = kataTerbalik + kata.charAt(lengthKata); // char entered reverse are added to variable,
     lengthKata --;
   }
   return kataTerbalik;
