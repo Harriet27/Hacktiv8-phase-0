@@ -1,11 +1,11 @@
 // Init comparaison function
 function bandingkanAngka(angka1, angka2) {
   if (angka1 > angka2) {
-    return "FALSE";
+    return false;
   } else if (angka2 > angka1) {
-    return "TRUE"
+    return true;
   } else if (angka2 === angka1) {
-    return "-1";
+    return -1;
   }
 }
 
