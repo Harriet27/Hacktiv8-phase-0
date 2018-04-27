@@ -15,7 +15,7 @@ while (counter <= 20) {
 console.log("LOOPING KEDUA");
 while (counter2 >= 2) {
   console.log(counter2 + " - I will become a fullstack developer");
-  counter2 += 2
+  counter2 -= 2
 }
 
 // Question 2
