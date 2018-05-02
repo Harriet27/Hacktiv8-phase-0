@@ -27,20 +27,11 @@ xoxoxo
 function drawLadder(row) {
   var s = "";
   for (var counter1 = 1; counter1 <= row; counter1 ++) {
-    for (var i = 1; i <= counter1; i ++) {
-      bagiPerboleh = i % 2;
-      if (bagiPerboleh) {
-        s += "x";
-      } else if (bagiPerboleh === false) {
-        s += "o";
-      }
-    }
-  console.log(s);
+    s += "x";
+    return(s);
   }
 
-}
-
-drawLadder(3);
+  console.log(drawLadder(3));
 
 // function bikinBintang(level) {
 //   var star = "";
