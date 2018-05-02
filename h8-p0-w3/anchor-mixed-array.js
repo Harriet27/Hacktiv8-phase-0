@@ -5,7 +5,7 @@ array.splice(1, 2, "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung");
 
 array.splice(4, 2, "Pria", "SMA Internasional Metro");
 
-// console.log(array);
+console.log(array);
 
 // 2nd Task
 
@@ -54,11 +54,29 @@ switch (bulan) {
     break;
 }
 
-// console.log(bulanConverted);
+console.log(bulanConverted);
 
 // 3rd Task
 
-var intTanggalLahir = Number(splitTanggalLahir);
+// assumption: requested array is in int.
 
-// splitTanggalLahir.sort(function(value1, value2) { return value1 < value2 });
-// console.log(splitTanggalLahir);
+var intTanggalLahir = []; // int array to contain converted strings
+
+for (var i = 0; i <= splitTanggalLahir.length - 1; i++) {
+  var intTemporary = Number(splitTanggalLahir[i]);
+  intTanggalLahir.push(intTemporary); // element added to int array
+}
+
+intTanggalLahir.sort(function(value1, value2) { return value1 < value2 });
+console.log(intTanggalLahir);
+
+/* string array converted using for loop to int array, this is done to make sorting possible.
+descending sort using sort function */
+
+// 4th Task
+
+console.log(splitTanggalLahir.join("-"));
+
+// 5th Task
+
+console.log(array[1].slice(0, 14)); // slice string
