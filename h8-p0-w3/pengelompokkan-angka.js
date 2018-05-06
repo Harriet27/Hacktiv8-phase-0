@@ -28,7 +28,7 @@ function mengelompokkanAngka(arr) {
   }
 
   // console.log(arrResults);
-  return arrResultsn;
+  return arrResults;
 
 }
 
