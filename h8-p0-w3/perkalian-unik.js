@@ -33,9 +33,9 @@ function perkalianUnik(arr) {
     console.log("ini ambilSementara " + ambilSementara);
     // arr = [2, 4, 6];
     arr.splice(i, 0, ambilSementara); // array returned to initial state
-    console.log("ini arr " + arr)
+    console.log("ini arr " + arr);
   }
-  return arrResults; 
+  return arrResults;
 }
 
 // TEST CASES
