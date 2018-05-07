@@ -23,9 +23,9 @@ Tampilkan kecepatan mobil jika menghadapi tanjakan dengan sudut kemiringan terse
 //
 // INPUT encounteredSlope
 //
-// IF encounteredSlope = slopeA THEN speed = speed
-//   ELSEIF encounteredSlope = slopeB THEN speed = speed - 10
-//   ELSEIF encounteredSlope = slopeC THEN speed = speed - 15
-//   ELSEIF encounteredSlope = slopeD THEN speed = speed - 25
+// IF encounteredSlope >= 0 AND encounteredSlope <= 14 THEN speed = speed
+//   ELSEIF encounteredSlope >= 15 AND encounteredSlope <= 29 THEN speed = speed - 10
+//   ELSEIF encounteredSlope >= 30 AND encounteredSlope <= 44 THEN speed = speed - 15
+//   ELSEIF encounteredSlope >= 45 AND encounteredSlope <= 50 THEN speed = speed - 25
 //
 // OUTPUT speed
