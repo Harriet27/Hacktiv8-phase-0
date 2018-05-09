@@ -11,7 +11,6 @@ function angkaPrima(angka) {
     }
   }
   return true;
-
 }
 
 console.log(angkaPrima(59));
