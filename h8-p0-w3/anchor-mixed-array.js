@@ -69,7 +69,7 @@ for (var i = 0; i <= splitTanggalLahir.length - 1; i++) {
 
 intTanggalLahir.sort(function(value1, value2) { return value1 < value2 });
 console.log(String(intTanggalLahir));
-console.log(typeof String(intTanggalLahir));
+// console.log(typeof String(intTanggalLahir));
 
 /* string array converted using for loop to int array, this is done to make sorting possible.
 descending sort using sort function */
