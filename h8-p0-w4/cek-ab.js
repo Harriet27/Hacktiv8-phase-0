@@ -1,5 +1,6 @@
 function checkAB(num) {
 
+  // init var
   var positionA;
   var positionB;
   var distance;
