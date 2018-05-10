@@ -54,7 +54,7 @@ switch (bulan) {
     break;
 }
 
-console.log(bulanConverted);
+console.log(Number(bulanConverted));
 
 // 3rd Task
 
