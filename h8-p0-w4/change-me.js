@@ -21,7 +21,7 @@ function changeMe(arr) {
       }
 
       else {
-        obj0.age = 0;
+        obj0.age = "Invalid Birth Year";
       }
 
       console.log((i + 1) + ". " + obj0.firstName + " " + obj0.lastName + ":");
