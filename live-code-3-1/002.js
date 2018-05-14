@@ -57,13 +57,22 @@ function operasiMatriks(arr1, arr2, operator) {
       return "Invalid Array";
     }
 
-    else {
+    else if (operator === "+"){
       var processedArr1 = arr1[i][0] + arr2[i][0];
       var processedArr2 = arr1[i][1] + arr2[i][1];
       var processedArr3 = arr1[i][2] + arr2[i][2];
       initialProcessedArray.push(processedArr1, processedArr2, processedArr3);
       // console.log(initialProcessedArray);
       finalProcessedArray.push(initialProcessedArray)
+
+    else {
+      var processedArr1 = arr1[i][0] - arr2[i][0];
+      var processedArr2 = arr1[i][1] - arr2[i][1];
+      var processedArr3 = arr1[i][2] - arr2[i][2];
+      initialProcessedArray.push(processedArr1, processedArr2, processedArr3);
+      // console.log(initialProcessedArray);
+      finalProcessedArray.push(initialProcessedArray)
+    }
 
 
       // var initialProcessedArray = []
