@@ -18,33 +18,33 @@ function sortManual(arr) {
       // init variables
       var inspector = arr[i];
 
-      console.log("ini inspector -> " + inspector);
+      // console.log("ini inspector -> " + inspector);
 
       // logic to find smallest Number
       if (i === 0) {
         tempoSmallestPosition = i;
         tempoSmallest = inspector;
-      } else if (tempoSmallest > inspector) {
+      } else if (tempoSmallest < inspector) {
         tempoSmallestPosition = i;
         tempoSmallest = inspector;
       }
 
-      console.log("ini smallest position -> " + tempoSmallestPosition);
-      console.log("ini tempoSmallest -> " + tempoSmallest);
+      // console.log("ini smallest position -> " + tempoSmallestPosition);
+      // console.log("ini tempoSmallest -> " + tempoSmallest);
 
     }
 
   smallest = arr[tempoSmallestPosition]; // obtain final smallest number
   arr.splice(tempoSmallestPosition, 1); // get smallest number and omit from array
-  console.log("ini smallest -> " + smallest);
-  console.log("ini length -> " + length);
-  console.log("ini arr " + arr);
+  // console.log("ini smallest -> " + smallest);
+  // console.log("ini length -> " + length);
+  // console.log("ini arr " + arr);
   sortedArr.push(smallest); // push smallest number to final array
-  console.log("ini sortedArr " + sortedArr);
+  // console.log("ini sortedArr " + sortedArr);
 
   }
 
 return sortedArr;
 }
 
-console.log(sortManual([1, 7, 3]));
+console.log(sortManual([2, 8, 4, 6, 8, 5, 8, 4]));
