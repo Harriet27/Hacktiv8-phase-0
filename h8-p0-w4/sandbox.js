@@ -1,22 +1,46 @@
-// var testObj = {
-//   name: "yusuf",
-//   address: "PB 7 no.14"
-// }
-//
-// testObj.hobby = ["Gaming", "sleeping", "eating"];
-//
-// console.log(testObj);
-//
-// var tester = "hobby";
-//
-// console.log(testObj[tester][1]);
+var angka = 653;
+var resultAkhir = String(angka);
 
-var string1 = "";
-var object1 = {a: 1, b: 2, c: 3};
+// console.log(angka % 10);
 
-for (var property1 in object1) {
-  string1 = string1 + object1[property1];
+while (resultAkhir.length > 1) {
+
+  console.log("ini angka -> " + angka);
+  console.log("resultAkhir -> " + resultAkhir);
+  var arr = [];
+  var strAngka = String(angka);
+
+  for (var i = 0; i < String(angka).length; i++) {
+    arr.push(Number(strAngka[i]));
+    console.log(arr);
+  }
+
+  var resultArr = 1;
+
+  for (var j = 0; j < arr.length; j++) {
+    resultArr *= arr[j];
+    console.log(resultArr);
+  }
+
+  angka = resultArr;
+  resultAkhir = String(angka);
 }
 
-console.log(string1);
-// expected output: "123"
+console.log(angka);
+
+//
+//   var result = 1;
+//
+//     result *= angka % modulus;
+//     angka = angka / divider;
+//     angka = Math.trunc(angka);
+//     result *= angka;
+//     angka = result;
+//     resultAkhir = String(result);
+//     console.log("result ELSE -> " + result);
+//     console.log("angka after ELSE -> " + angka);
+//
+//
+// console.log("result akhir -> " + result);
+
+// }

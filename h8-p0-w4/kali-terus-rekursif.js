@@ -19,9 +19,7 @@ function kaliTerusRekursif(angka) {
 
   if (resultAkhir.length === 1) {
     return resultArr;
-  }
-
-  else {
+  } else {
     return kaliTerusRekursif(resultArr);
   }
 

@@ -18,18 +18,67 @@ RULE:
 - tidak boleh menggunakan .map, .filter dan .reduce!
 */
 
-function invokeSpell (input) {
-  const spells = [
-      { q: 3, w: 0, e: 0, spellName: 'Cold Snap' },
-      { q: 0, w: 2, e: 1, spellName: 'Alacrity' },
-      { q: 1, w: 0, e: 2, spellName: 'Forge Spirit' },
-      { q: 0, w: 0, e: 3, spellName: 'Sunstrike' },
-      { q: 1, w: 2, e: 0, spellName: 'Tornado' },
-      { q: 0, w: 3, e: 0, spellName: 'EMP' },
-      { q: 0, w: 1, e: 2, spellName: 'Chaos Meteor' },
-      { q: 1, w: 1, e: 1, spellName: 'Deafening Blast' },
-      { q: 2, w: 0, e: 1, spellName: 'Ice Wall' },
-      { q: 2, w: 1, e: 0, spellName: 'Ghost Walk' },
+function invokeSpell(input) {
+  const spells = [{
+      q: 3,
+      w: 0,
+      e: 0,
+      spellName: 'Cold Snap'
+    },
+    {
+      q: 0,
+      w: 2,
+      e: 1,
+      spellName: 'Alacrity'
+    },
+    {
+      q: 1,
+      w: 0,
+      e: 2,
+      spellName: 'Forge Spirit'
+    },
+    {
+      q: 0,
+      w: 0,
+      e: 3,
+      spellName: 'Sunstrike'
+    },
+    {
+      q: 1,
+      w: 2,
+      e: 0,
+      spellName: 'Tornado'
+    },
+    {
+      q: 0,
+      w: 3,
+      e: 0,
+      spellName: 'EMP'
+    },
+    {
+      q: 0,
+      w: 1,
+      e: 2,
+      spellName: 'Chaos Meteor'
+    },
+    {
+      q: 1,
+      w: 1,
+      e: 1,
+      spellName: 'Deafening Blast'
+    },
+    {
+      q: 2,
+      w: 0,
+      e: 1,
+      spellName: 'Ice Wall'
+    },
+    {
+      q: 2,
+      w: 1,
+      e: 0,
+      spellName: 'Ghost Walk'
+    },
   ];
 
   var objElements = {
@@ -43,15 +92,11 @@ function invokeSpell (input) {
     // console.log(inspector);
 
     if (inspector === "q") {
-      objElements.q ++;
-    }
-
-    else if (inspector === "w") {
-      objElements.w ++;
-    }
-
-    else if (inspector === "e") {
-      objElements.e ++;
+      objElements.q++;
+    } else if (inspector === "w") {
+      objElements.w++;
+    } else if (inspector === "e") {
+      objElements.e++;
     }
 
   }
@@ -65,7 +110,7 @@ function invokeSpell (input) {
     }
   }
 
-    return "Combination does not exist";
+  return "Combination does not exist";
 }
 
 console.log(invokeSpell('qwe')); // Deafening Blast

@@ -2,9 +2,7 @@ function makanTerusRekursif(waktu) {
 
   if (waktu <= 0) {
     return 0;
-  }
-
-  else {
+  } else {
     return makanTerusRekursif(waktu - 15) + 1;
   }
 
