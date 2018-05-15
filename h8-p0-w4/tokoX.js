@@ -61,7 +61,7 @@ function countProfit(shoppers) {
           // console.log("ini stock -> " + listBarang[count][2]);
           // console.log("ini count -> " + count);
         } else if (count < 2) {
-          count++
+          count ++
         } else {
           product2 = true;
           return supplyReport;
