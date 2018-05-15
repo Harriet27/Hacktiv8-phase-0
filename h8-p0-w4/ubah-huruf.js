@@ -18,7 +18,7 @@ function ubahHuruf(kata) {
     result += arrABC[nextLetterIndex];
   }
 
-    return result;
+  return result;
 
 }
 
