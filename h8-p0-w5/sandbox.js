@@ -1,74 +1,72 @@
-function deepSum (arr) {
+function naikAngkot(arrPenumpang) {
+  rute = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-  if (arr.length === 0) {
-    return "No number";
+  // init variables
+  var parentArrayLength = arrPenumpang.length;
+  var arrPassengerReport = [];
+
+  // logic to detect contains of arrPenumpang
+  if (parentArrayLength === 0) {
+    return "[]";
   } else {
 
-    var result = 0;
-    var parentArrayLength = arr.length;
-
+    // loop to access passenger info from arrPenumpang
     for (var i = 0; i < parentArrayLength; i++) {
-      // console.log(arr[i]);
 
-      var nestedArrayDepth1length = arr[i].length;
+      // init obj variable to contain passenger info
+      var objTemporaryPassengerReport = {
+        penumpang: "",
+        naikDari: "",
+        tujuan: "",
+        bayar: 1
+      };
 
-      for (var j = 0; j < nestedArrayDepth1length; j++) {
-        // console.log(arr[i][j]);
+      // assign respective passenger info into properties of obj
+      objTemporaryPassengerReport.penumpang += arrPenumpang[i][0];
+      objTemporaryPassengerReport.naikDari += arrPenumpang[i][1];
+      objTemporaryPassengerReport.tujuan += arrPenumpang[i][2];
 
-        var nestedArrayDepth2length = arr[i][j].length;
+      // init var to find numberOfRoutesTravelled
+      var positionNaikDari = 0;
+      var positionTujuan = 0;
 
-        for (var k = 0; k < nestedArrayDepth2length; k++) {
-          // console.log(arr[i][j][k]);
-          result += arr[i][j][k];
-
+      // loop to obtain position of depart route and arrival route
+      for (var j = 0; j < rute.length; j++) {
+        var inspector = rute[j];
+        // console.log(inspector);
+        if (inspector === objTemporaryPassengerReport.naikDari) {
+          positionNaikDari += j;
+        } else if (inspector === objTemporaryPassengerReport.tujuan) {
+          positionTujuan += j;
         }
       }
 
-      // console.log(nestedArray1length);
+      // console.log(positionNaikDari);
+      // console.log(positionTujuan);
+
+      // var to contain numberOfRoutesTravelled
+      var numberOfRoutesTravelled = positionTujuan - positionNaikDari;
+      // console.log(numberOfRoutesTravelled);
+
+      // push payment to object
+      objTemporaryPassengerReport.bayar *= numberOfRoutesTravelled * 2000;
+      // console.log(objTemporaryPassengerReport);
+
+      // push object arrPassengerReport
+      arrPassengerReport.push(objTemporaryPassengerReport)
+      // console.log(objTemporaryPassengerReport);
+
     }
+
   }
-
-  return result;
+  return arrPassengerReport;
 }
-
 //TEST CASE
-console.log(deepSum([
-  [
-    [4, 5, 6],
-    [9, 1, 2, 10],
-    [9, 4, 3]
-  ],
-  [
-    [4, 14, 31],
-    [9, 10, 18, 12, 20],
-    [1, 4, 90]
-  ],
-  [
-    [2, 5, 10],
-    [3, 4, 5],
-    [2, 4, 5, 10]
-  ]
-])); // 316
+console.log(naikAngkot([
+  ['Dimitri', 'B', 'F'],
+  ['Icha', 'A', 'B']
+]));
+// [ { penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 },
+//   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
 
-console.log(deepSum([
-  [
-    [20, 10],
-    [15],
-    [1, 1]
-  ],
-  [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-    [2],
-    [9, 11]
-  ],
-  [
-    [3, 5, 1],
-    [1, 5, 3],
-    [1]
-  ],
-  [
-    [2]
-  ]
-])); // 156
-
-console.log(deepSum([])); // No number
+console.log(naikAngkot([])); //[]
