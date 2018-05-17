@@ -3,7 +3,7 @@ function cariPelaku(str) {
   // init var, /abc/ match with str
   var pelaku = str.match(/abc/g);
   // console.log(pelaku);
-  return(pelaku.length);
+  return (pelaku.length);
 }
 
 // TEST CASES
