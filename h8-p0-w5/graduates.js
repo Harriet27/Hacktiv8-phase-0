@@ -9,7 +9,7 @@ function graduates(students) {
 
     // init var
     var classNameInspector = students[i].class[0]; // var to contain first letter of student's class name
-    var tempoClassName = students[i].class;     // var to contain class name of students
+    var tempoClassName = students[i].class; // var to contain class name of students
     // console.log(classNameInspector);
 
     /* logic to detect if class name is already included in objHighScoringStudent,
