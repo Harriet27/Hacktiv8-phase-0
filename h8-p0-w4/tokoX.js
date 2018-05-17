@@ -39,31 +39,31 @@ function countProfit(shoppers) {
     for (var i = 0; i < shoppers.length; i++) {
 
       var buyer = shoppers[i].name;
-      var product1 = shoppers[i].product;
+      var product = shoppers[i].product;
       var amount = shoppers[i].amount;
-      var product2 = false;
+      var booleanProductExistence = false;
       var stock;
       var count = 0;
 
       // console.log("buyer -> " + buyer);
-      // console.log("product1 -> " + product1);
+      // console.log("product -> " + product);
       // console.log("amount -> " + amount);
       // console.log(count);
       // console.log("--<>--");
 
-      while (product2 === false) {
+      while (booleanProductExistence === false) {
         // console.log(count);
 
-        if (listBarang[count][0] === product1) {
-          product2 = listBarang[count][0];
+        if (listBarang[count][0] === product) {
+          booleanProductExistence = listBarang[count][0];
           stock = listBarang[count][2];
-          // console.log(product2);
+          // console.log(booleanProductExistence);
           // console.log("ini stock -> " + listBarang[count][2]);
           // console.log("ini count -> " + count);
         } else if (count < 2) {
-          count ++
+          count++
         } else {
-          product2 = true;
+          booleanProductExistence = true;
           return supplyReport;
         }
 
