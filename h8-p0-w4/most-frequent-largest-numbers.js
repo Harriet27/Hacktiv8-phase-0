@@ -33,18 +33,18 @@ function sorting(arrNumber) {
 
     }
 
-  smallest = arrNumber[tempoSmallestPosition]; // obtain final smallest number
-  arrNumber.splice(tempoSmallestPosition, 1); // get smallest number and omit from arrNumberay
-  // console.log("ini smallest -> " + smallest);
-  // console.log("ini length -> " + length);
-  // console.log("ini arrNumber " + arrNumber);
-  sortedArr.push(smallest); // push smallest number to final arrNumberay
-  // console.log("ini sortedArr " + sortedArr);
+    smallest = arrNumber[tempoSmallestPosition]; // obtain final smallest number
+    arrNumber.splice(tempoSmallestPosition, 1); // get smallest number and omit from arrNumberay
+    // console.log("ini smallest -> " + smallest);
+    // console.log("ini length -> " + length);
+    // console.log("ini arrNumber " + arrNumber);
+    sortedArr.push(smallest); // push smallest number to final arrNumberay
+    // console.log("ini sortedArr " + sortedArr);
 
   }
 
-// console.log(sortedArr);
-return sortedArr;
+  // console.log(sortedArr);
+  return sortedArr;
 
 }
 
@@ -56,18 +56,18 @@ function getTotal(arrNumber) {
     var inspector = arrNumber[i];
 
     if (inspector === terbesar) {
-      total ++
+      total++
     }
   }
 
-  console.log("angka paling besar adalah " + terbesar + " dengan jumlah kemunculan sebanyak " + total + " kali");
-  return total;
+  // console.log("angka paling besar adalah " + terbesar + " dengan jumlah kemunculan sebanyak " + total + " kali");
+  return [total, terbesar];
 }
 
 function mostFrequentLargestNumbers(arrNumber) {
   var listSort = sorting(arrNumber);
   var countHighest = getTotal(listSort);
-  return countHighest;
+  return "angka paling besar adalah " + countHighest[1] + " dengan jumlah kemunculan sebanyak " + countHighest[0] + " kali";
 }
 
 console.log(mostFrequentLargestNumbers([2, 8, 4, 6, 8, 5, 8, 4]));
