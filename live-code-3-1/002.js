@@ -48,59 +48,60 @@ function operasiMatriks(arr1, arr2, operator) {
 
   var finalProcessedArray = []
 
-  for (var i = 0; i < arr1.length; i++) {
-    var initialProcessedArray = []
-    // console.log(arr1[i].length);
-    // console.log(arr2[i].length);
+  if (arr1.length !== arr2.length) {
+    return "INVALID ARRAY";
+  } else {
 
-    if (arr1[i].length !== arr2[i].length) {
-      return "Invalid Array";
+    for (var i = 0; i < arr1.length; i++) {
+      var initialProcessedArray = []
+      // console.log(arr1[i].length);
+      // console.log(arr2[i].length);
+
+      if (arr1[i].length !== arr2[i].length) {
+        return "Invalid Array";
+      } else if (operator === "+") {
+        for (var j = 0; j < arr1[i].length; j++) {
+          var processedIndex = [];
+          var processedIndex = arr1[i][j] + arr2[i][j];
+          initialProcessedArray.push(processedIndex);
+          // console.log(initialProcessedArray);
+        }
+        finalProcessedArray.push(initialProcessedArray)
+      } else {
+        for (var k = 0; k < arr1[i].length; k++) {
+          var processedIndex = [];
+          var processedIndex = arr1[i][k] - arr2[i][k];
+          initialProcessedArray.push(processedIndex);
+          // console.log(initialProcessedArray);
+        }
+        finalProcessedArray.push(initialProcessedArray)
+      }
+
     }
-
-    else if (operator === "+"){
-      var processedArr1 = arr1[i][0] + arr2[i][0];
-      var processedArr2 = arr1[i][1] + arr2[i][1];
-      var processedArr3 = arr1[i][2] + arr2[i][2];
-      initialProcessedArray.push(processedArr1, processedArr2, processedArr3);
-      // console.log(initialProcessedArray);
-      finalProcessedArray.push(initialProcessedArray)
-
-    else {
-      var processedArr1 = arr1[i][0] - arr2[i][0];
-      var processedArr2 = arr1[i][1] - arr2[i][1];
-      var processedArr3 = arr1[i][2] - arr2[i][2];
-      initialProcessedArray.push(processedArr1, processedArr2, processedArr3);
-      // console.log(initialProcessedArray);
-      finalProcessedArray.push(initialProcessedArray)
-    }
-
-
-      // var initialProcessedArray = []
-      // for (var i = 0; i < array.length; i++) {
-      //   array[i]
-    }
-
   }
 
   return finalProcessedArray;
 }
 
 console.log(operasiMatriks([
-    [5, 4, 7],
-    [3, 9, 3],
-    [8, 3, 2]
-],[
-    [5, 4, 8],
-    [1, 9, 3],
-    [8, 2, 2]
-]));// [ [ 10, 8, 15 ], [ 4, 18, 6 ], [ 16, 5, 4 ] ]
-
-console.log(operasiMatriks([
   [5, 4, 7],
   [3, 9, 3],
-  [8, 3, 2]
-],[
+  [8, 3, 2],
+  [6, 7, 8]
+], [
   [5, 4, 8],
-  [1, 9, 3, 5],
-  [8, 2, 2]
-],"+")); // INVALID ARRAY
+  [1, 9, 3],
+  [8, 2, 2],
+  [3, 3, 5]
+], "-")); // [ [ 10, 8, 15 ], [ 4, 18, 6 ], [ 16, 5, 4 ] ]
+
+// console.log(operasiMatriks([
+//   [5, 4, 7],
+//   [3, 9, 3],
+//   [8, 3, 2]
+// ], [
+//   [5, 4, 8],
+//   [1, 9, 3],
+//   [8, 2, 2],
+//   [1, 2, 3]
+// ], "+")); // INVALID ARRAY
