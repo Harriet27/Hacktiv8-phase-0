@@ -53,11 +53,53 @@ RULES
 */
 
 function numberPrimeCruncher(input) {
-  // only code here..
+  var factors = [];
+  var angka = input;
+
+  for (var i = 2; i <= input; i++) {
+    var angka = i;
+    var booleanPrime = true;
+    // loop to divide angka with int before angka
+    for (var j = 2; j < angka; j++) {
+      var divider = j;
+      var inspector = angka % divider;
+      // console.log(divider);
+      // console.log(inspector);
+
+      // logic to decide if angka is a prime number or not
+      if (inspector === 0) {
+        booleanPrime = false;
+      }
+    }
+    if (booleanPrime) {
+      factors.push(i)
+    }
+  }
+
+  // console.log(factors);
+
+  var sum = 0;
+  for (var k = 0; k < factors.length; k++) {
+    sum += factors[k]
+  }
+  // console.log(sum);
+
+  var average = sum / factors.length
+
+  // console.log(average);
+
+  var arrFactorsAboveAverage = [];
+  for (var l = 0; l < factors.length; l++) {
+    if (factors[l] > average) {
+      arrFactorsAboveAverage.push(factors[l])
+    }
+  }
+
+  return arrFactorsAboveAverage;
 }
 
 console.log(numberPrimeCruncher(10)); // [ 5, 7 ]
 console.log(numberPrimeCruncher(44)); // [ 23, 29, 31, 37, 41, 43 ]
 console.log(numberPrimeCruncher(23)); // [ 13, 17, 19, 23 ]
-console.log(numberPrimeCruncher(1); // []
+console.log(numberPrimeCruncher(1)); // []
 console.log(numberPrimeCruncher(0)); // []

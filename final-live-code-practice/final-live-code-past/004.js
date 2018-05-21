@@ -1,4 +1,3 @@
-
 /**
 Mini Sudoku Board
 =================
@@ -10,7 +9,7 @@ yang tipe data-nya berupa String.
 # Contoh I/O
 - Input: '290500007'
   Output: [ ['2', '9', '0'], ['5', '0', '0'], ['0', '0', '7] ]
-  
+
 - Input: '302609005'
   Output: [ ['3', '0', '2'], ['6', '0', '9'], ['0', '0', '5'] ]
 
@@ -20,8 +19,26 @@ yang tipe data-nya berupa String.
 
 */
 
-function miniSudokuBoard (text) {
-  // Code here
+function miniSudokuBoard(text) {
+  if (text.length === 0) {
+    return "Empty Board";
+  } else if (text.length !== 9) {
+    return 'Invalid input';
+  } else {
+
+    var arrParentContainer = [];
+    var k = 0;
+    for (var l = 0; l < 3; l++) {
+      var arrInitContainer = []
+      while (arrInitContainer.length < 3) {
+        arrInitContainer.push(text[k])
+        // console.log(arrInitContainer);
+        k++;
+      }
+      arrParentContainer.push(arrInitContainer)
+    }
+    return arrParentContainer;
+  }
 }
 
 console.log(miniSudokuBoard('005030081'));

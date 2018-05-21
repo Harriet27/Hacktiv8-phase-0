@@ -1,4 +1,3 @@
-
 /**
 Delete Undefined Keys
 =====================
@@ -22,12 +21,23 @@ CONSTRAINTS
 
 */
 
-function deleteUndefinedKeys (data) {
-  // Code here
+function deleteUndefinedKeys(data) {
+  if (data.length === 0) {
+    return "No Data";
+  } else {
+    // console.log(data);
+    for (var i = 0; i < data.length; i++) {
+      for (var key in data[i]) {
+        if (data[i][key] === undefined) {
+          delete data[i][key]
+        }
+      }
+    }
+    return data;
+  }
 }
 
-console.log(deleteUndefinedKeys([
-  {
+console.log(deleteUndefinedKeys([{
     name: 'Dimitri',
     address: undefined,
     email: 'dimitri@mail.com',
@@ -47,8 +57,7 @@ console.log(deleteUndefinedKeys([
     { name: 'Alexei', address: 'Earth', age: 18, gender: 'male' } ]
 */
 
-console.log(deleteUndefinedKeys([
-  {
+console.log(deleteUndefinedKeys([{
     band: 'Ghost',
     formed: 2006,
     members: ['Papa Emeritus', 'Alpha', 'Omega', 'Water', 'Wind', 'Earth'],
