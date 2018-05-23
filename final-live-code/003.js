@@ -1,4 +1,3 @@
-
 /*
 Count solo
 ===========
@@ -16,10 +15,26 @@ RULES:
 
 */
 
-function countSolo (numbers) {
-  // your code here
+function countSolo(numbers) {
+  var sumSingle = 0;
+
+  for (var i = 0; i < numbers.length; i++) {
+    var tempoNumber = numbers[i];
+    var tempoArr = [];
+    for (var k = 0; k < numbers.length; k++) {
+      var inspector = numbers[k];
+      if (inspector === tempoNumber) {
+        tempoArr.push(inspector)
+      }
+    }
+    // console.log(tempoArr);
+    if (tempoArr.length === 1) {
+      sumSingle += tempoArr[0];
+    }
+  }
+  return sumSingle;
 }
 
-console.log(countSolo([ 5, 5, 6, 6, 3, 1, 2, 7, 7])) // 6
-console.log(countSolo([ 3, 6, 3, 6, 1, 1, 2, 1 ]))  // 2
-console.log(countSolo([ 3, 3, 3, 3, 4, 5, 8, 10, 11 ])) // 38
+console.log(countSolo([5, 5, 6, 6, 3, 1, 2, 7, 7])) // 6
+console.log(countSolo([3, 6, 3, 6, 1, 1, 2, 1])) // 2
+console.log(countSolo([3, 3, 3, 3, 4, 5, 8, 10, 11])) // 38

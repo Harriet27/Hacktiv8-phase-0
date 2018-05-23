@@ -18,7 +18,27 @@
 **/
 
 function hapusSimbolRec(str) {
-  // your code here
+
+  var result = "";
+
+  if (str[0] === "a" || str[0] === "b" || str[0] === "c" || str[0] === "d" || str[0] === "e" || str[0] === "f" || str[0] === "g" || str[0] === "h" || str[0] === "i" ||
+    str[0] === "j" || str[0] === "k" || str[0] === "l" || str[0] === "m" || str[0] === "n" || str[0] === "o" || str[0] === "p" || str[0] === "q" ||
+    str[0] === "r" || str[0] === "s" ||
+    str[0] === "t" || str[0] === "u" || str[0] === "v" || str[0] === "w" || str[0] === "x" || str[0] === "y" || str[0] === "z" || str[0] === "0" ||
+    str[0] === "1" ||
+    str[0] === "2" || str[0] === "3" || str[0] === "4" || str[0] === "5" || str[0] === "6" || str[0] === "7" || str[0] === "8" || str[0] === "9") {
+    result += str[0]
+  }
+
+  var arrStr = str.split("");
+  arrStr.shift();
+  var arrStrJoin = arrStr.join("");
+
+  if (str.length === 0) {
+    return result;
+  } else {
+    return result + hapusSimbolRec(arrStrJoin);
+  }
 }
 
 

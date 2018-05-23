@@ -43,25 +43,70 @@ NOTE:
 
 **/
 
-
 function squareNumber(num) {
-  // your code here
+  if (num < 3) {
+    return 'Minimal input adalah 3';
+  } else {
+    var arr = []; // creates a new array .. much preferred method too.
+    for (var i = 0; i < num; i++) {
+      arr[i] = [];
+    }
+    // console.log(arr);
+
+    var numStart = 1;
+    var numLimit = num * num;
+    for (var j = arr.length - 1; j >= 0; j--) {
+      var arrAccess = j;
+      // console.log(arrAccess);
+      for (var k = 1; arr[arrAccess].length < num; k++) {
+        if (arr.length % 2 !== 0) {
+          if (arrAccess % 2 === 0) {
+            arr[arrAccess].push(numStart);
+          } else if (arrAccess % 2 !== 0) {
+            arr[arrAccess].unshift(numStart);
+          }
+        } else if (arr.length % 2 === 0) {
+          if (arrAccess % 2 !== 0) {
+            arr[arrAccess].push(numStart);
+          } else if (arrAccess % 2 === 0) {
+            arr[arrAccess].unshift(numStart);
+          }
+        }
+        numStart++
+      }
+    }
+    return (arr);
+  }
 }
 
-console.log(squareNumber(3));
+// console.log(squareNumber(3));
 // [ [ 7, 8, 9 ], [ 6, 5, 4 ], [ 1, 2, 3 ] ]
 
 console.log(squareNumber(4));
-// [ [ 16, 15, 14, 13 ],
-//   [ 9, 10, 11, 12 ],
-//   [ 8, 7, 6, 5 ],
-//   [ 1, 2, 3, 4 ] ]
-
+// // [ [ 16, 15, 14, 13 ],
+// //   [ 9, 10, 11, 12 ],
+// //   [ 8, 7, 6, 5 ],
+// //   [ 1, 2, 3, 4 ] ]
+//
 console.log(squareNumber(5));
-// [ [ 21, 22, 23, 24, 25 ],
-//   [ 20, 19, 18, 17, 16 ],
+// // // [ [ 21, 22, 23, 24, 25 ],
+// // //   [ 20, 19, 18, 17, 16 ],
+// // //[11, 12, 13, 14, 15],
+// // //   [ 10, 9, 8, 7, 6 ],
+// // // [ 1, 2, 3, 4, 5 ] ]
+
+console.log(squareNumber(2)); // Minimal input adalah 3
+// console.log(squareNumber(4));
+// // [ [ 16, 15, 14, 13 ],
+// //   [ 9, 10, 11, 12 ],
+// //   [ 8, 7, 6, 5 ],
+// //   [ 1, 2, 3, 4 ] ]
+//
+// console.log(squareNumber(5));
+// // [ [ 21, 22, 23, 24, 25 ],
+// //   [ 20, 19, 18, 17, 16 ],
 //   [ 11, 12, 13, 14, 15 ],
 //   [ 10, 9, 8, 7, 6 ],
 //   [ 1, 2, 3, 4, 5 ] ]
 
-console.log(squareNumber(2)); // Minimal input adalah 3
+// console.log(squareNumber(2)); // Minimal input adalah 3
